@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+
+.nav-container {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    background-color: transparent;
+    z-index: 999;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+
+.logo {
+    width: 100px;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    list-style-type: none;
+    background-color: rgba(245, 245, 245, 0.9);
+    line-height: 5em;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: lightblue;
+    font-size: 1.6em;
+    text-shadow: 1px 1px grey;
+    transition: all 0.1s linear;
+}
+
+.toggle-menu {
+    visibility: visible;
+    opacity: 100%;
+}
+
+.nav-menu a:hover {
+    text-shadow: 2px 2px black;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bars {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    color: black;
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Main */
+
+section {
+    height: 90vh;
+    transition: all 0.3s ease;
+}
+
+.home {
+    display: grid;
+    place-content: center;
+    background: linear-gradient(rgba(43, 135, 197, 0.6), rgba(61, 61, 61, 0.5)), url(./background.jpeg) center/cover no-repeat;
+}
+
+.home-text {
+    text-align: center;
+    max-width: 500px;
+}
+
+.home-title {
+    font-size: 3em;
+    color: whitesmoke;
+    margin: 10px;
+    text-shadow: 1px 1px grey;
+}
+
+.home-description {
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+}
+
+.explore {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.explore:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+#team {
+    background-color: rgba(135, 207, 235, 0.2);
+}
+
+section h2 {
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Footer */
+
+footer {
+    height: 100px;
+    background-color: darkgrey;
+    display: grid;
+    place-items: center;
+}
+
+.footer-text {
+    color: whitesmoke;
+    font-size: 1em;
+}
+
+/* Bottom to top button */
+
+.top {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    font-size: 1.3em;
+    padding: 5px 6px;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(135, 207, 235, 0.5);
+    animation: bounce 2s ease infinite;
+    transition: all 0.3s ease;
+}
+
+.top-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media screen and (min-width: 768px){
+    .nav-menu{
+        position: relative;
+        flex-direction: row;
+        top: 0;
+        padding: 0;
+        visibility: visible;
+        opacity: 100;
+        background-color: transparent;
+        width: 400px;
+        justify-content: space-between;
+    }
+
+    .nav-menu a{
+        color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .bars{
+        display: none;
+    }
+}
